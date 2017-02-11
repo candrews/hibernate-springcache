@@ -100,7 +100,6 @@ class SpringCacheManagerToJCacheManagerAdapter implements CacheManager {
 		checkClosed();
 		final Cache<?,?> cache = nameToCache.remove( cacheName );
 		if(cache!=null){
-			cache.clear();
 			cache.close();
 		}
 	}
