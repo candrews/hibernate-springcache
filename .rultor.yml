@@ -4,8 +4,15 @@ decrypt:
   settings.xml: "repo/settings.xml.asc"
   pubring.gpg: "repo/pubring.gpg.asc"
   secring.gpg: "repo/secring.gpg.asc"
+merge:
+  fast-forward: no
+  script: |
+    ./mvnw clean install -Phibernate-springcache -Psonatype --settings /home/r/settings.xml -B -e
+deploy:
+  script: |
+    ./mvnw clean install nexus-staging:deploy -Phibernate-springcache -Psonatype --settings /home/r/settings.xml -B -e
 release:
   script: |
     ./mvnw versions:set "-DnewVersion=${tag}"
     git commit -am "${tag}"
-    ./mvnw clean deploy -Phibernate-springcache -Psonatype --settings /home/r/settings.xml
+    ./mvnw clean deploy -Phibernate-springcache -Psonatype --settings /home/r/settings.xml -B -e
