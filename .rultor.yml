@@ -6,6 +6,6 @@ decrypt:
   secring.gpg: "repo/secring.gpg.asc"
 release:
   script: |
-    mvn versions:set "-DnewVersion=${tag}"
+    ./mvnw versions:set "-DnewVersion=${tag}"
     git commit -am "${tag}"
-    mvn clean deploy -Phibernate-springcache -Psonatype --settings /home/r/settings.xml
+    ./mvnw clean deploy -Phibernate-springcache -Psonatype --settings /home/r/settings.xml
