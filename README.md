@@ -6,7 +6,7 @@ Hibernate SpringCache
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.integralblue/hibernate-springcache/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.integralblue/hibernate-springcache)
 [![Reference Status](https://www.versioneye.com/java/com.integralblue:hibernate-springcache/reference_badge.svg?style=flat-square)](https://www.versioneye.com/java/com.integralblue:hibernate-springcache/references)
 [![Dependency Status](https://www.versioneye.com/java/com.integralblue:hibernate-springcache/badge?style=flat-square)](https://www.versioneye.com/java/com.integralblue:hibernate-springcache)
-[![Javadoc](https://javadoc-emblem.rhcloud.com/doc/com.integralblue/hibernate-springcach/badge.svg)](http://www.javadoc.io/doc/com.integralblue/hibernate-springcach)
+[![Javadoc](https://javadoc-emblem.rhcloud.com/doc/com.integralblue/hibernate-springcache/badge.svg)](http://www.javadoc.io/doc/com.integralblue/hibernate-springcache)
 
 Hibernate SpringCache is a Hibernate cache implementation that backs to the Spring Cache abstraction.
 In other words, setup caching once in Spring then use it from Spring and Hibernate so configuration isn't duplicated.
