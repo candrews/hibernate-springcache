@@ -5,10 +5,7 @@
 <exclude-pattern>.*/home/candrews/projects/hibernate-spring-cache/src/test/java.*</exclude-pattern>
 <rule ref="rulesets/java/basic.xml"/>
 <rule ref="rulesets/java/braces.xml"/>
-<rule ref="rulesets/java/codesize.xml">
-<exclude name="TooManyFields"/>
-<exclude name="TooManyMethods"/>
-</rule>
+<rule ref="rulesets/java/codesize.xml"/>
 <rule ref="rulesets/java/controversial.xml">
 <exclude name="AtLeastOneConstructor"/>
 <exclude name="AvoidFinalLocalVariable"/>

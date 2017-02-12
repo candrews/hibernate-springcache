@@ -28,6 +28,7 @@ javax.cache.processor.MutableEntry;
 import org.springframework.cache.Cache.ValueWrapper;
 import org.springframework.core.GenericTypeResolver;
 
+@SuppressWarnings("PMD.TooManyMethods")
 class SpringCacheToJCache<K, V> implements Cache<K, V> {
 	private final org.springframework.cache.Cache springCache;
 	private final CacheManager cacheManager;
