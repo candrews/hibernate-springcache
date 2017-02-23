@@ -26,6 +26,11 @@ Quick Start
   </dependency>
 ```
 * In application.properties, add:
-`spring.jpa.properties.hibernate.cache.region.factory_class=com.integralblue.hibernate.cache.springcache.SpringCacheRegionFactory`
+ * `spring.jpa.properties.hibernate.cache.region.factory_class=com.integralblue.hibernate.cache.springcache.SpringCacheRegionFactory`
+ * To enable the query cache, add:
+`spring.jpa.properties.hibernate.cache.use_query_cache=true` See the [Hibernate query caching documentation](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#caching-query) for more information.
+ * To enable the second level cache, add:
+`spring.jpa.properties.hibernate.cache.use_second_level_cache=true
+spring.jpa.properties.javax.persistence.sharedCache.mode=ENABLE_SELECTIVE` See the [Hibernate query caching documentation](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#caching-config) for more information.
 * If using Spring Boot, that's it - `com.integralblue.hibernate.cache.springcache.SpringCacheRegionFactoryAutoConfigure` will take care of the rest.
 * If not not using Spring boot, the `com.integralblue.hibernate.cache.springcache.SpringCacheRegionFactoryBeanPostProcessor` bean post processor must be registered (add it as a bean using Spring Java or XML configuration).
