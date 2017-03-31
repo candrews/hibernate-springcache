@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnProperty(name="spring.jpa.properties.hibernate.cache.region.factory_class", havingValue="com.integralblue.hibernate.cache.springcache.SpringCacheRegionFactory")
 public class SpringCacheRegionFactoryAutoConfigure {
 	@Bean
-	protected SpringCacheRegionFactoryBeanPostProcessor springCacheRegionFactoryBeanPostProcessor(){
+	protected static SpringCacheRegionFactoryBeanPostProcessor springCacheRegionFactoryBeanPostProcessor(){
 		return new SpringCacheRegionFactoryBeanPostProcessor();
 	}
 }
