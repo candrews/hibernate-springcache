@@ -3,3 +3,14 @@ sudo: false
 language: java
 jdk:
   - openjdk8
+addons:
+  sonarcloud:
+    organization: "candrews-github"
+    token:
+      secure: XT74GczIbCv7KviiW2X0MMTTPzhcoH06bv5SJY4mfnuky89hbgPAzibrb0lraH0LJZ5DhLMhJWTBUeevbV21eRuDJMol5At0WNEKohOXQj2A/mEVPmNbxYoqOWbtltvF/PrxiascZJv31R26REKFBd9i0iXx9JSRU84cMqBsSMbS3oMFTW6ATP80BTQNOK3j5MCNGrDXLhEXaddkkxcq+/o75MmrxvRALVd74S5bKzeQ5Xqdxbzo4ihhZHH6kXF76nKV5ED2xIafub9X//fJaNk//4VLbCRu2faLCvWsLuWWz4/HpxfAKdEQI2nTMruuHJntLjVMVMQk5Hssvqy6ZJz/5Xa4nluyKqKRCFwpppHi1l55zSjswaOfuwpXiUPBl7I7doozSZvltr76RFjXl3wbmYoT4DyyRWiQ+zSXPOPQhcEF3RrSrtffOKBocY9bJ9su3bAPyipUdHr1oRB0NAnD4RkV0AInkpVJHWuw8SxmdBoU/rlegJIU49mgV8/Fl3w05g3cCZyBYi7GdJKP2FacP+B8MKqQQqZ3dIbo8xO6gndDy+hmdmr9S1wN3NOFfYqSZTkj+23kePWazLeaJW0BQxizGV2SB2qzuJdrkfK/9sJOKNqDd9hblj1mCEb8yAxE+7iCRmwMoWHabMWt+59BDN7Pbv4odNqiHTqjRIk=
+script:
+  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
