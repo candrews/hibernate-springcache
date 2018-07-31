@@ -16,7 +16,7 @@ This project has been submitted to Hibernate for inclusion: https://github.com/h
 
 Quick Start
 ===========
-* **Minimum requirements** — You'll need Java 1.8+, Hibernate 5.2.6+, and Spring 4.3+. Spring Boot 1.4+ is optional.
+* **Minimum requirements** — You'll need Java 1.8+, Hibernate 5.3.3+, and Spring 4.3+. Spring Boot 1.4+ is optional. Use version 1.x of this project for Hibernate 5.2 support.
 * **Download** — Depend on this libary using, for example, Maven:
 ```xml
   <dependency>

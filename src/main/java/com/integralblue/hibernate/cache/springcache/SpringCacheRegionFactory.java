@@ -6,11 +6,12 @@
  */
 package com.integralblue.hibernate.cache.springcache;
 
-import java.util.Properties;
+import java.util.Map;
 
 import javax.cache.CacheManager;
 
-import org.hibernate.cache.jcache.JCacheRegionFactory;
+import org.hibernate.boot.spi.SessionFactoryOptions;
+import org.hibernate.cache.jcache.internal.JCacheRegionFactory;
 
 @SuppressWarnings("serial")
 public class SpringCacheRegionFactory extends JCacheRegionFactory {
@@ -22,12 +23,12 @@ public class SpringCacheRegionFactory extends JCacheRegionFactory {
 	public static final String UNWRAP_JCACHE = PROP_PREFIX + ".unwrap_jcache";
 
 	@Override
-	protected CacheManager getCacheManager(final Properties properties ){
+	protected CacheManager resolveCacheManager(final SessionFactoryOptions settings, @SuppressWarnings("rawtypes") final Map properties) {
 		final org.springframework.cache.CacheManager springCacheManager = SPRING_CACHE_MANAGER.get();
 		if(springCacheManager == null){
 			throw new IllegalStateException("The Spring Cache Manager to use must be provided");
 		}
-		final boolean unwrapJcache = Boolean.parseBoolean( getProp( properties, UNWRAP_JCACHE ) );
+		final boolean unwrapJcache = Boolean.parseBoolean( (String) properties.get( UNWRAP_JCACHE ) );
 		return new SpringCacheManagerToJCacheManagerAdapter( springCacheManager, unwrapJcache );
 	}
 
