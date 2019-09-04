@@ -50,8 +50,8 @@
 
 	<properties>
 		<hibernate.version>5.3.3.Final</hibernate.version>
-		<spring.version>4.3.6.RELEASE</spring.version>
-		<spring-boot.version>1.4.2.RELEASE</spring-boot.version>
+		<spring.version>4.3.14.RELEASE</spring.version>
+		<spring-boot.version>1.5.10.RELEASE</spring-boot.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -219,7 +219,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
