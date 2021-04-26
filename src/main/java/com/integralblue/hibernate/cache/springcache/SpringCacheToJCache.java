@@ -53,7 +53,7 @@ class SpringCacheToJCache<K, V> implements Cache<K, V> {
 
 		@Override
 		public V getValue() {
-			// The javadoc for javax.cache.Cache.Entry.getValue() says:
+			// The javadoc for Cache.Entry.getValue() says:
 			// Returns the value stored in the cache when this entry was created.
 			// so don't get the live value
 			return value;
@@ -352,7 +352,7 @@ class SpringCacheToJCache<K, V> implements Cache<K, V> {
 	}
 
 	@Override
-	public Iterator<javax.cache.Cache.Entry<K, V>> iterator() {
+	public Iterator<Cache.Entry<K, V>> iterator() {
 		checkClosed();
 		throw new UnsupportedOperationException();
 	}

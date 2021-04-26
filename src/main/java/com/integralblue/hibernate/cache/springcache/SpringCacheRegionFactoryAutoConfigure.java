@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConditionalOnProperty(name="spring.jpa.properties.hibernate.cache.region.factory_class", havingValue="com.integralblue.hibernate.cache.springcache.SpringCacheRegionFactory")
+@SuppressWarnings("PMD.ClassNamingConventions")
 public class SpringCacheRegionFactoryAutoConfigure {
 	@Bean
 	protected static SpringCacheRegionFactoryBeanPostProcessor springCacheRegionFactoryBeanPostProcessor(){
